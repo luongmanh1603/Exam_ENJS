@@ -56,7 +56,7 @@ app.get('/api/songs/:id', async (req, res)=>{
     }
 })
 //update song
-app.put('api/songs/:id', async (req, res)=> {
+app.put('/api/songs/:id', async (req, res)=> {
     const {name, author, size, views} = req.body;
     try {
        const updateSong = await Song.findByIdAndUpdate(
@@ -74,7 +74,7 @@ app.put('api/songs/:id', async (req, res)=> {
     }
 });
 //delete
-app.delete('api/songs/:id', async (req, res)=> {
+app.delete('/api/songs/:id', async (req, res)=> {
     try {
        const deleteSong = await Song.findByIdAndDelete(req.params.id);
        if(!deleteSong) {
